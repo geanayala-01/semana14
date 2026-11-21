@@ -38,7 +38,9 @@ export const personalInfo = {
   github: 'https://github.com/geanayala-01',
   githubUser: 'geanayala-01',
   siteUrl,
-  avatar: 'https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  // Avatar animado generado con DiceBear (estilo avataaars)
+  avatar:
+    'https://api.dicebear.com/9.x/avataaars/png?seed=Gean&size=512&top=shortFlat&hairColor=2c1b18&skinColor=d08b5b&facialHairProbability=0&clothing=hoodie&clothesColor=25557c&eyes=default&mouth=smile&eyebrows=defaultNatural&accessoriesProbability=0&backgroundColor=10b981',
 };
 
 export const skills = [
@@ -51,5 +53,7 @@ export const skills = [
   'Kotlin (Android)',
   'Tailwind CSS',
   'Docker',
+  'QA & Testing',
+  'Pruebas unitarias y E2E',
   'Git & GitHub',
 ];

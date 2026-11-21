@@ -19,12 +19,12 @@ export default function AboutPage() {
 
         <div className="mb-16 grid gap-10 md:grid-cols-3">
           <div className="md:col-span-1">
-            <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-slate-800">
+            <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-slate-800 bg-emerald-500">
               <Image
                 src={personalInfo.avatar}
                 alt={personalInfo.name}
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 hover:scale-105"
                 loading="lazy"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
@@ -43,6 +43,8 @@ export default function AboutPage() {
                 He trabajado en aplicaciones web con React y Next.js, APIs con
                 Spring Boot, Node.js y Django, y apps móviles en Android con
                 Kotlin, siempre buscando escribir código limpio y fácil de mantener.
+                También me interesa el QA y el testing: escribir pruebas y revisar
+                la calidad del software para que lo que entrego funcione bien.
               </p>
               <p>
                 Me gusta probar herramientas nuevas, entender cómo funcionan por

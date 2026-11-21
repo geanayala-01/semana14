@@ -32,13 +32,13 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="relative mx-auto h-48 w-48 md:h-64 md:w-64">
+        <div className="relative mx-auto h-48 w-48 md:h-64 md:w-64 animate-[float_6s_ease-in-out_infinite]">
           <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-emerald-500 to-cyan-500 opacity-60 blur-xl" />
           <Image
             src={personalInfo.avatar}
             alt={personalInfo.name}
             fill
-            className="relative rounded-full border-4 border-slate-900 object-cover"
+            className="relative rounded-full border-4 border-slate-900 bg-emerald-500 object-cover"
             priority
             sizes="(max-width: 768px) 192px, 256px"
           />
