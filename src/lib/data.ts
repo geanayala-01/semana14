@@ -23,7 +23,7 @@ export const projects: Project[] = [
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     demoUrl: siteUrl,
-    githubUrl: 'https://github.com/geanayala-01/my-portfolio',
+    githubUrl: 'https://github.com/geanayala-01/semana14',
     featured: true,
   },
 ];
