@@ -1,44 +1,55 @@
 import { Project } from '@/types';
 
+// URL pública del sitio: se configura en Vercel con NEXT_PUBLIC_SITE_URL
+// (por ejemplo https://geanayala.vercel.app o tu dominio personalizado).
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://geanayala.vercel.app').replace(/\/$/, '');
+
 export const projects: Project[] = [
   {
-    slug: 'ecommerce-platform',
-    title: 'E-commerce Platform',
-    description: 'Plataforma de comercio electrónico con Next.js, Stripe y PostgreSQL',
-    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Tailwind'],
-    demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/usuario/ecommerce',
+    slug: 'intifix',
+    title: 'IntiFix',
+    description:
+      'Plataforma que conecta clientes con técnicos verificados para reparar laptops, celulares y otros equipos. Incluye app web, app Android, API y panel de administración.',
+    image: 'https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=1600&auto=format&fit=crop',
+    technologies: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Kotlin', 'Django', 'Docker'],
+    githubUrl: 'https://github.com/rivera-anderson/intifix',
     featured: true,
   },
   {
-    slug: 'task-manager',
-    title: 'Task Manager App',
-    description: 'Aplicación de gestión de tareas con autenticación y tiempo real',
-    image: 'https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-    demoUrl: 'https://tasks.example.com',
-    githubUrl: 'https://github.com/usuario/task-manager',
+    slug: 'portafolio-seo',
+    title: 'Portafolio con SEO',
+    description:
+      'Este mismo portafolio: Next.js con meta tags dinámicos, Open Graph, sitemap, robots.txt e imágenes optimizadas con carga diferida.',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    demoUrl: siteUrl,
+    githubUrl: 'https://github.com/geanayala-01/my-portfolio',
     featured: true,
-  },
-  {
-    slug: 'weather-dashboard',
-    title: 'Weather Dashboard',
-    description: 'Dashboard interactivo del clima con gráficos y pronósticos',
-    image: 'https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=2106&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    technologies: ['Next.js', 'Chart.js', 'OpenWeather API'],
-    githubUrl: 'https://github.com/usuario/weather-app',
-    featured: false,
   },
 ];
 
 export const personalInfo = {
-  name: 'Tu Nombre',
-  title: 'Full Stack Developer',
-  description: 'Desarrollador apasionado por crear experiencias web excepcionales',
-  email: 'tu@email.com',
-  github: 'https://github.com/tuusuario',
-  linkedin: 'https://linkedin.com/in/tuusuario',
-  siteUrl: 'https://tuportafolio.com',
+  name: 'Gean Pierre Ayala',
+  shortName: 'GeanAyala',
+  title: 'Desarrollador de Software',
+  description:
+    'Desarrollador apasionado por aprender y aplicar las tecnologías más nuevas para construir aplicaciones web y móviles.',
+  email: 'gean.ayala.dev@gmail.com',
+  github: 'https://github.com/geanayala-01',
+  githubUser: 'geanayala-01',
+  siteUrl,
   avatar: 'https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 };
+
+export const skills = [
+  'TypeScript / JavaScript',
+  'React & Next.js',
+  'Node.js & Express',
+  'Spring Boot',
+  'Django',
+  'PostgreSQL & MongoDB',
+  'Kotlin (Android)',
+  'Tailwind CSS',
+  'Docker',
+  'Git & GitHub',
+];

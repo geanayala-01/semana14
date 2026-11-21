@@ -1,32 +1,25 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { personalInfo } from '@/lib/data';
+import { personalInfo, skills } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Sobre Mí',
   description: `Conoce más sobre ${personalInfo.name}, ${personalInfo.title}`,
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {
-  const skills = [
-    'JavaScript/TypeScript',
-    'React & Next.js',
-    'Node.js & Express',
-    'PostgreSQL & MongoDB',
-    'Tailwind CSS',
-    'Git & GitHub',
-    'Docker',
-    'AWS',
-  ];
-
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Sobre Mí</h1>
+    <div className="container mx-auto px-4 py-16">
+      <div className="mx-auto max-w-4xl">
+        <p className="mb-2 font-mono text-emerald-400">~/sobre-mi</p>
+        <h1 className="mb-10 text-4xl font-extrabold text-white">Sobre Mí</h1>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="mb-16 grid gap-10 md:grid-cols-3">
           <div className="md:col-span-1">
-            <div className="relative w-full aspect-square rounded-lg overflow-hidden">
+            <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-slate-800">
               <Image
                 src={personalInfo.avatar}
                 alt={personalInfo.name}
@@ -38,41 +31,39 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="mb-4 text-2xl font-bold text-white">
               ¡Hola! Soy {personalInfo.name}
             </h2>
-            <div className="prose text-gray-700 space-y-4">
+            <div className="space-y-4 text-slate-300">
               <p>
-                Soy un desarrollador full stack apasionado por crear experiencias
-                web excepcionales. Con más de X años de experiencia, me especializo
-                en construir aplicaciones modernas y escalables.
+                Soy desarrollador de software y me apasiona aprender las
+                tecnologías más nuevas y ponerlas en práctica en proyectos reales.
               </p>
               <p>
-                Mi enfoque está en escribir código limpio, mantenible y eficiente,
-                siempre buscando las mejores prácticas y las últimas tecnologías
-                para entregar productos de alta calidad.
+                He trabajado en aplicaciones web con React y Next.js, APIs con
+                Spring Boot, Node.js y Django, y apps móviles en Android con
+                Kotlin, siempre buscando escribir código limpio y fácil de mantener.
               </p>
               <p>
-                Cuando no estoy programando, me gusta contribuir a proyectos de
-                código abierto, escribir artículos técnicos y aprender nuevas
-                tecnologías.
+                Me gusta probar herramientas nuevas, entender cómo funcionan por
+                dentro y seguir mejorando con cada proyecto.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Skills Section con lazy loading implícito */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Habilidades Técnicas
+        {/* Skills Section */}
+        <section>
+          <h2 className="mb-6 text-3xl font-bold text-white">
+            <span className="font-mono text-emerald-400">02.</span> Habilidades Técnicas
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {skills.map((skill) => (
               <div
                 key={skill}
-                className="bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
+                className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-center transition hover:border-emerald-500/60"
               >
-                <p className="font-semibold text-gray-800">{skill}</p>
+                <p className="font-semibold text-slate-200">{skill}</p>
               </div>
             ))}
           </div>

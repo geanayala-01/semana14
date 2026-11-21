@@ -27,6 +27,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: project.title,
     description: project.description,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
     openGraph: {
       title: project.title,
       description: project.description,
@@ -51,41 +54,41 @@ export default async function ProjectDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto max-w-4xl px-4 py-16">
       <Link
         href="/projects"
-        className="text-blue-600 hover:underline mb-6 inline-block"
+        className="mb-6 inline-block font-mono text-sm text-emerald-400 hover:underline"
       >
         ← Volver a Proyectos
       </Link>
 
       <article>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="mb-6 text-4xl font-extrabold text-white md:text-5xl">
           {project.title}
         </h1>
 
-        <div className="relative w-full h-96 mb-8 rounded-lg overflow-hidden">
+        <div className="relative mb-8 h-64 w-full overflow-hidden rounded-xl border border-slate-800 md:h-96">
           <Image
             src={project.image}
             alt={project.title}
             fill
             className="object-cover"
             priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+            sizes="(max-width: 768px) 100vw, 896px"
           />
         </div>
 
-        <p className="text-lg text-gray-700 mb-6">{project.description}</p>
+        <p className="mb-8 text-lg text-slate-300">{project.description}</p>
 
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">
+        <div className="mb-8">
+          <h2 className="mb-3 text-2xl font-bold text-white">
             Tecnologías Utilizadas
           </h2>
           <div className="flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 font-mono text-sm text-emerald-300"
               >
                 {tech}
               </span>
@@ -93,13 +96,13 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           {project.demoUrl && (
             <a
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+              className="rounded-lg bg-emerald-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-emerald-400"
             >
               Ver Demo
             </a>
@@ -109,7 +112,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition"
+              className="rounded-lg border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-emerald-400 hover:text-emerald-400"
             >
               Ver Código
             </a>

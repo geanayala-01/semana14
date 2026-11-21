@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,6 +9,12 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+});
+
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono-jb',
 });
 
 export const metadata: Metadata = {
@@ -25,6 +31,10 @@ export const metadata: Metadata = {
     'react',
     'typescript',
     'portafolio',
+    'gean pierre ayala',
+    'desarrollador de software',
+    'spring boot',
+    'kotlin',
   ],
   authors: [{ name: personalInfo.name }],
   creator: personalInfo.name,
@@ -35,21 +45,12 @@ export const metadata: Metadata = {
     title: `${personalInfo.name} - ${personalInfo.title}`,
     description: personalInfo.description,
     siteName: personalInfo.name,
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: `${personalInfo.name} - Portafolio`,
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${personalInfo.name} - ${personalInfo.title}`,
     description: personalInfo.description,
-    images: ['/og-image.jpg'],
-    creator: '@tuusuario',
+    creator: `@${personalInfo.githubUser}`,
   },
   robots: {
     index: true,
@@ -62,8 +63,8 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'tu-codigo-de-verificacion',
+  alternates: {
+    canonical: '/',
   },
 };
 
@@ -73,10 +74,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={inter.variable}>
-      <body className="flex flex-col min-h-screen">
+    <html lang="es" className={`${inter.variable} ${mono.variable}`}>
+      <body className="flex flex-col min-h-screen font-sans antialiased">
         <Header />
-        <main className="grow bg-gray-50">{children}</main>
+        <main className="grow">{children}</main>
         <Footer />
       </body>
     </html>

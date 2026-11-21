@@ -1,55 +1,73 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { projects, personalInfo } from '@/lib/data';
+import { projects, personalInfo, skills } from '@/lib/data';
 import ProjectCard from '@/components/ProjectCard';
 
 export default function Home() {
   const featuredProjects = projects.filter((p) => p.featured);
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-16">
       {/* Hero Section */}
-      <section className="text-center mb-20">
-        <div className="relative w-32 h-32 mx-auto mb-6">
+      <section className="mb-24 grid items-center gap-10 md:grid-cols-[1fr_auto]">
+        <div>
+          <p className="mb-4 font-mono text-emerald-400">Hola, soy</p>
+          <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-white md:text-6xl">
+            {personalInfo.name}
+          </h1>
+          <p className="mb-6 text-xl text-slate-300 md:text-2xl">{personalInfo.title}</p>
+          <p className="mb-8 max-w-xl text-lg text-slate-400">{personalInfo.description}</p>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="/projects"
+              className="rounded-lg bg-emerald-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-emerald-400"
+            >
+              Ver Proyectos
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-lg border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-emerald-400 hover:text-emerald-400"
+            >
+              Contáctame
+            </Link>
+          </div>
+        </div>
+        <div className="relative mx-auto h-48 w-48 md:h-64 md:w-64">
+          <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-emerald-500 to-cyan-500 opacity-60 blur-xl" />
           <Image
             src={personalInfo.avatar}
             alt={personalInfo.name}
             fill
-            className="rounded-full object-cover"
+            className="relative rounded-full border-4 border-slate-900 object-cover"
             priority
-            sizes="128px"
+            sizes="(max-width: 768px) 192px, 256px"
           />
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-          {personalInfo.name}
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-600 mb-6">
-          {personalInfo.title}
-        </p>
-        <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
-          {personalInfo.description}
-        </p>
-        <div className="flex gap-4 justify-center">
-          <Link
-            href="/projects"
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
-          >
-            Ver Proyectos
-          </Link>
-          <Link
-            href="/about"
-            className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition"
-          >
-            Sobre Mí
-          </Link>
+      </section>
+
+      {/* Stack */}
+      <section className="mb-24">
+        <h2 className="mb-6 font-mono text-sm uppercase tracking-widest text-slate-500">
+          Tecnologías con las que trabajo
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          {skills.map((skill) => (
+            <span
+              key={skill}
+              className="rounded-full border border-slate-800 bg-slate-900 px-4 py-2 text-sm text-slate-300"
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       </section>
+
       {/* Featured Projects */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          Proyectos Destacados
+        <h2 className="mb-8 text-3xl font-bold text-white">
+          <span className="font-mono text-emerald-400">01.</span> Proyectos Destacados
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           {featuredProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
