@@ -41,8 +41,8 @@ export default function AboutPage() {
               </p>
               <p>
                 He trabajado en aplicaciones web con React y Next.js, APIs con
-                Spring Boot, Node.js y Django, y apps móviles en Android con
-                Kotlin, siempre buscando escribir código limpio y fácil de mantener.
+                Java con Spring Boot, Node.js y Django, y apps móviles con
+                Kotlin y Flutter, siempre buscando escribir código limpio y fácil de mantener.
                 También me interesa el QA y el testing: escribir pruebas y revisar
                 la calidad del software para que lo que entrego funcione bien.
               </p>

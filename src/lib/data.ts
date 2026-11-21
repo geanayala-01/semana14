@@ -40,17 +40,19 @@ export const personalInfo = {
   siteUrl,
   // Avatar animado generado con DiceBear (estilo avataaars)
   avatar:
-    'https://api.dicebear.com/9.x/avataaars/png?seed=Gean&size=512&top=shortFlat&hairColor=2c1b18&skinColor=d08b5b&facialHairProbability=0&clothing=hoodie&clothesColor=25557c&eyes=default&mouth=smile&eyebrows=defaultNatural&accessoriesProbability=0&backgroundColor=10b981',
+    'https://api.dicebear.com/9.x/avataaars/png?seed=Gean&size=512&top=curly&hairColor=2c1b18&skinColor=d08b5b&facialHairProbability=0&clothing=hoodie&clothesColor=25557c&eyes=default&mouth=smile&eyebrows=defaultNatural&accessories=prescription02&accessoriesColor=262e33&accessoriesProbability=100&backgroundColor=10b981',
 };
 
 export const skills = [
   'TypeScript / JavaScript',
+  'Java',
   'React & Next.js',
   'Node.js & Express',
   'Spring Boot',
   'Django',
   'PostgreSQL & MongoDB',
   'Kotlin (Android)',
+  'Flutter',
   'Tailwind CSS',
   'Docker',
   'QA & Testing',
