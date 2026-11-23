@@ -2,7 +2,7 @@ import { Project } from '@/types';
 
 // URL pública del sitio: se configura en Vercel con NEXT_PUBLIC_SITE_URL
 // (por ejemplo https://geanayala.vercel.app o tu dominio personalizado).
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://geanayala.vercel.app').replace(/\/$/, '');
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://geanayala.is-a.dev').replace(/\/$/, '');
 
 export const projects: Project[] = [
   {
